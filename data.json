@@ -1,0 +1,20 @@
+{
+  "title": "PDF Document in Puppeteer & Handlebars",
+  "users": [
+    {
+      "name": "Kane",
+      "age": "32",
+      "country": "USA"
+    },
+    {
+      "name": "Jane",
+      "age": "28",
+      "country": "UK"
+    },
+    {
+      "name": "John",
+      "age": "30",
+      "country": "New Zealand"
+    }
+  ]
+}
