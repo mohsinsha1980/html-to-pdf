@@ -1,5 +1,4 @@
 const fs = require("fs");
-const fx = require("fs-extra");
 const puppeteer = require("puppeteer");
 const hbs = require("handlebars");
 const path = require("path");
@@ -15,15 +14,10 @@ const compile = async function (templateName, data) {
   try {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    // const html = fs.readFileSync("sample.html", "utf-8");
-    // const content = await page.setContent(html, {
-    //   waitUntil: "domcontentloaded",
-    // });
     const content = await compile("index", data);
     await page.setContent(content, {
       waitUntil: "domcontentloaded",
     });
-    // await page.emulateMediaType("screen");
 
     const pdf = await page.pdf({
       path: "result.pdf",
